@@ -1,5 +1,13 @@
 #!/bin/sh
 
+# Installing GO
+
+cd /
+wget -c https://go.dev/dl/go1.17.6.linux-armv6l.tar.gz
+tar -vzxf go1.17.6.linux-armv6l.tar.gz
+mv go /usr/local/
+echo "PATH=$PATH:/usr/local/go/bin" >> /root/.bashrc
+
 # Creating gogs user
 
 adduser --disabled-password -gecos "" gogs
