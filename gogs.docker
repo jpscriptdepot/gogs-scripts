@@ -1,0 +1,17 @@
+FROM ubuntu:20.04
+
+RUN apt-get update -y
+RUN apt-get upgrade -y
+RUN apt-get dist-upgrade -y
+
+RUN apt-get install wget -y
+RUN apt-get install git -y
+RUN apt-get install build-essential -y
+RUN apt-get install mariadb-server -y
+
+RUN wget -c https://go.dev/dl/go1.17.6.linux-armv6l.tar.gz
+RUN tar -vzxf go1.17.6.linux-armv6l.tar.gz
+RUN mv go /usr/local/
+RUN echo "PATH=$PATH:/usr/local/go/bin" >> /root/.bashrc
+
+
