@@ -48,7 +48,7 @@ cd gogs/
 /usr/local/go/bin/go build -o gogs
 
 cd /
-mv gogs /usr/local/
-echo "PATH=$PATH:/usr/local/gogs" >> /root/.bashrc
+mv gogs /home/gogs/
+echo "PATH=$PATH:/home/gogs/gogs" >> /home/gogs/.bashrc
 
 echo "All tasks are complete!"
