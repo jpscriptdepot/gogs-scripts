@@ -35,9 +35,9 @@ service mysql start
 
 # Applying MySQL queries
 
-mysql -u root -e "CREATE DATABASE gogs;"
-mysql -u root -e "CREATE USER 'gogs'@'localhost' IDENTIFIED BY 'senhasegura123456';"
-mysql -u root -e "GRANT ALL PRIVILEGES ON gogs.* TO 'gogs'@'localhost';"
+mysql -u root -e "CREATE DATABASE $dbname;"
+mysql -u root -e "CREATE USER '$user'@'localhost' IDENTIFIED BY '$password';"
+mysql -u root -e "GRANT ALL PRIVILEGES ON $dbname.* TO '$user'@'localhost';"
 mysql -u root -e "FLUSH PRIVILEGES;"
 
 # Building GOGS
