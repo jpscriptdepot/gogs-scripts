@@ -43,15 +43,9 @@ mysql -u root -e "FLUSH PRIVILEGES;"
 # Building GOGS
 
 cd /
-wget -c https://go.dev/dl/go1.17.6.linux-armv6l.tar.gz
-tar -vzxf go1.17.6.linux-armv6l.tar.gz
-mv go /usr/local/
-echo "PATH=$PATH:/usr/local/go/bin" >> /root/.bashrc
-
-cd /
 git clone --depth 1 https://github.com/gogs/gogs.git gogs
 cd gogs/
-go build -o gogs
+/usr/local/go/bin/go build -o gogs
 
 cd /
 mv gogs /usr/local/
